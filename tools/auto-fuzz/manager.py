@@ -97,7 +97,7 @@ class OSS_FUZZ_PROJECT:
         if self.language == "python":
             return self.project_folder + "/fuzz_1.py"
         elif self.language == "jvm":
-            return self.project_folder + "/Fuzz.java"
+            return self.project_folder + "/Fuzz1.java"
         else:
             # Temporary fail safe logic
             return self.project_folder + "/fuzz_1.py"
@@ -451,7 +451,7 @@ def run_static_analysis_jvm(git_repo, basedir, project_name):
         f.write(response.content)
 
     # Retrieve path of all jar files
-    jarfiles.append(os.path.abspath("../Fuzz.jar"))
+    jarfiles.append(os.path.abspath("../Fuzz1.jar"))
     jarfiles.append("%s/*.jar" % jardir)
     if project_type == "ant":
         for file in os.listdir(os.path.join(builddir, "build", "jar")):
@@ -467,8 +467,8 @@ def run_static_analysis_jvm(git_repo, basedir, project_name):
 
     # Compile and package fuzzer to jar file
     cmd = [
-        "javac -cp jazzer_standalone.jar:commons-lang3.jar:%s ../Fuzz.java" %
-        ":".join(jarfiles), "jar cvf ../Fuzz.jar ../Fuzz.class"
+        "javac -cp jazzer_standalone.jar:commons-lang3.jar:%s ../Fuzz1.java" %
+        ":".join(jarfiles), "jar cvf ../Fuzz1.jar ../Fuzz1.class"
     ]
     try:
         subprocess.check_call(" && ".join(cmd),
@@ -477,11 +477,13 @@ def run_static_analysis_jvm(git_repo, basedir, project_name):
                               stdout=subprocess.DEVNULL,
                               stderr=subprocess.DEVNULL)
     except subprocess.TimeoutExpired:
-        print("Fail to compile Fuzz.java.\n")
+        print("Fail to compile Fuzz1.java.\n")
         return False
 
     # Run the java frontend static analysis
-    cmd = ["./run.sh", "--jarfile", ":".join(jarfiles), "--entryclass", "Fuzz"]
+    cmd = [
+        "./run.sh", "--jarfile", ":".join(jarfiles), "--entryclass", "Fuzz1"
+    ]
     try:
         subprocess.check_call(" ".join(cmd),
                               shell=True,
@@ -498,11 +500,11 @@ def run_static_analysis_jvm(git_repo, basedir, project_name):
 
     # Move data and data.yaml to working directory
     data_src = os.path.join(os.path.dirname(FUZZ_INTRO_MAIN["jvm"]),
-                            "fuzzerLogFile-Fuzz.data")
+                            "fuzzerLogFile-Fuzz1.data")
     yaml_src = os.path.join(os.path.dirname(FUZZ_INTRO_MAIN["jvm"]),
-                            "fuzzerLogFile-Fuzz.data.yaml")
-    data_dst = os.path.join(basedir, "work", "fuzzerLogFile-Fuzz.data")
-    yaml_dst = os.path.join(basedir, "work", "fuzzerLogFile-Fuzz.data.yaml")
+                            "fuzzerLogFile-Fuzz1.data.yaml")
+    data_dst = os.path.join(basedir, "work", "fuzzerLogFile-Fuzz1.data")
+    yaml_dst = os.path.join(basedir, "work", "fuzzerLogFile-Fuzz1.data.yaml")
     if os.path.isfile(data_src) and os.path.isfile(yaml_src):
         ret = True
         try:
@@ -679,10 +681,7 @@ def build_and_test_single_possible_target(idx_folder,
         oss_fuzz_path = os.path.join(OSS_FUZZ_BASE, "projects",
                                      os.path.basename(auto_fuzz_proj_dir),
                                      src_dir)
-
-        if os.path.isdir(oss_fuzz_path):
-            shutil.rmtree(oss_fuzz_path)
-
+        shutil.rmtree(oss_fuzz_path)
     tick_tqdm_tracker()
 
 
@@ -752,8 +751,7 @@ def autofuzz_project_from_github(github_url,
                                  language,
                                  do_static_analysis=False,
                                  possible_targets=None,
-                                 to_merge=False,
-                                 param_combination=False):
+                                 to_merge=False):
     """Auto-generates fuzzers for a Github project and performs runtime checks
     on the fuzzers.
     """
@@ -852,8 +850,7 @@ def autofuzz_project_from_github(github_url,
             elif language == "jvm":
                 possible_targets = fuzz_driver_generation_jvm.generate_possible_targets(
                     oss_fuzz_base_project.project_folder,
-                    constants.MAX_TARGET_PER_PROJECT_HEURISTIC,
-                    param_combination)
+                    constants.MAX_TARGET_PER_PROJECT_HEURISTIC)
 
     print("Generated %d possible targets for %s." %
           (len(possible_targets), github_url))
@@ -866,9 +863,8 @@ def autofuzz_project_from_github(github_url,
                      language)
 
     if to_merge:
-        merged_directory = post_process.merge_run(autofuzz_base_workdir,
-                                                  language)
-        if merged_directory:
+        merged_directory = post_process.merge_run(autofuzz_base_workdir)
+        if merged_directory is not None:
             oss_fuzz_manager.copy_and_introspect_project(
                 merged_directory, OSS_FUZZ_BASE, merged_directory)
             introspector_oss_base = os.path.join(
@@ -881,16 +877,11 @@ def autofuzz_project_from_github(github_url,
                     os.path.join(merged_directory, "introspector-report"))
             else:
                 print("No introspector generated")
-        else:
-            print("Fail to merge project")
 
     return True
 
 
-def run_on_projects(language,
-                    repos_to_target,
-                    to_merge=False,
-                    param_combination=False):
+def run_on_projects(language, repos_to_target, to_merge=False):
     """Run autofuzz generation on a list of Github projects."""
     home_dir = os.getcwd()
     for repo in repos_to_target:
@@ -898,8 +889,7 @@ def run_on_projects(language,
         autofuzz_project_from_github(repo,
                                      language,
                                      do_static_analysis=True,
-                                     to_merge=to_merge,
-                                     param_combination=param_combination)
+                                     to_merge=to_merge)
     print("Completed auto-fuzz generation on %d projects" %
           len(repos_to_target))
 
@@ -923,29 +913,13 @@ def get_cmdline_parser() -> argparse.ArgumentParser:
                         type=str,
                         help="The languaeg of the projects",
                         default='python')
-    parser.add_argument("--targets",
-                        type=str,
-                        help="The targets to use",
-                        default='constants')
+    parser.add_argument("--targets", type=str, help="The targets to use")
     parser.add_argument(
         "--merge",
         action="store_true",
         help=("If set, will for each project combine all successful projects "
               "into a single OSS-Fuzz project and run Fuzz Introspector on "
               "this project."))
-    parser.add_argument(
-        "--param_combination",
-        action="store_true",
-        help=
-        ("If set and if some method parameters can be generated with "
-         "multiple ways, the auto-fuzz generator will create one target "
-         "for each of the possible comibinations for parameter generation. "
-         "Creating a set of possible target with same method call but different "
-         "parameter generating combination. If this is not set, only one possible "
-         "target is generated for each method call with the first parameter generating "
-         "combination. Currently, this option is only processed for java project."
-         ))
-
     return parser
 
 
@@ -968,7 +942,6 @@ if __name__ == "__main__":
         run_on_projects("python", github_projects, args.merge)
     elif args.language == 'java':
         github_projects = get_target_repos(args.targets, 'jvm')
-        run_on_projects("jvm", github_projects, args.merge,
-                        args.param_combination)
+        run_on_projects("jvm", github_projects)
     else:
         print("Language not supported")

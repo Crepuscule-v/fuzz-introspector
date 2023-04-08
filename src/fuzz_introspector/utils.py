@@ -167,7 +167,7 @@ def scan_executables_for_fuzz_introspector_logs(
     for f in os.listdir(exec_dir):
         full_path = os.path.join(exec_dir, f)
         if os.access(full_path, os.X_OK) and os.path.isfile(full_path):
-            logger.info("File: %s is executable" % full_path)
+            logger.info("File: %s is executable" % full_path)               # /work/fuzzer 
             executable_files.append(full_path)
 
     # Filter all executables containing "fuzzerLogFile" string
@@ -189,7 +189,7 @@ def scan_executables_for_fuzz_introspector_logs(
             })
             # Break when a string is found to avoid scanning the whole binary.
             break
-
+    print(executable_to_fuzz_reports)
     return executable_to_fuzz_reports
 
 

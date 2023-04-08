@@ -46,9 +46,9 @@ class FuzzerProfile:
         # Defaults
         self.binary_executable: str = ""
         self.file_targets: Dict[str, Set[str]] = dict()
-        self.coverage: Optional[code_coverage.CoverageProfile] = None
+        self.coverage: Optional[code_coverage.CoverageProfile] = None       # 预期类型为 code_coverage.CoverageProfile
         self.all_class_functions: Dict[
-            str, function_profile.FunctionProfile] = dict()
+            str, function_profile.FunctionProfile] = dict()         # func -> func profile 
         self.branch_blockers: List[Any] = []
 
         self._target_lang = target_lang
@@ -85,10 +85,15 @@ class FuzzerProfile:
             return self.entrypoint_fun
         elif self.target_lang == "jvm":
             cname = self.fuzzer_source_file
-            return f"[{cname}].fuzzerTestOneInput"
+            arg = 'com.code_intelligence.jazzer.api.FuzzedDataProvider'
+            return f"[{cname}].fuzzerTestOneInput({arg})"
         else:
             return None
 
+    # @property：这是一个Python装饰器，
+    # 表示接下来定义的方法将作为属性使用，而不是通常的方法。
+    # 这意味着可以使用object.identifier（而不是object.identifier())
+    # 来访问该方法的返回值。
     @property
     def identifier(self):
         """Fuzzer identifier"""
@@ -124,15 +129,11 @@ class FuzzerProfile:
             return self.entrypoint_function is not None
 
         elif self.target_lang == "jvm":
-            for name in self.all_class_functions:
-                if name.startswith(self.entrypoint_function):
-                    return True
+            return self.entrypoint_function in self.all_class_functions
 
         return False
 
     def func_is_entrypoint(self, demangled_func_name: str) -> bool:
-        if self.target_lang == "jvm":
-            return demangled_func_name.startswith(self.entrypoint_function)
         if (demangled_func_name != self.entrypoint_function
                 and self.entrypoint_function not in demangled_func_name):
             return False
@@ -402,15 +403,11 @@ class FuzzerProfile:
 
         # Find JVM entrypoint
         elif self._target_lang == "jvm":
-            entrypoint = None
-            for name in self.all_class_functions:
-                if name.startswith(self.entrypoint_function):
-                    entrypoint = name
-                    break
-            if entrypoint:
-                self.functions_reached_by_fuzzer = (
-                    self.all_class_functions[entrypoint].functions_reached)
-                self.functions_reached_by_fuzzer.append(entrypoint)
+            if self.entrypoint_function in self.all_class_functions:
+                self.functions_reached_by_fuzzer = (self.all_class_functions[
+                    self.entrypoint_function].functions_reached)
+                self.functions_reached_by_fuzzer.append(
+                    self.entrypoint_function)
                 return
 
         raise DataLoaderError("Can not identify entrypoint")
@@ -429,6 +426,7 @@ class FuzzerProfile:
         """Load coverage data for this profile"""
         logger.info(f"Loading coverage of type {self.target_lang}")
         if self.target_lang == "c-cpp":
+            # self.identifier = fuzzer 
             self.coverage = code_coverage.load_llvm_coverage(
                 target_folder, self.identifier)
         elif self.target_lang == "python":

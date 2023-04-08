@@ -298,10 +298,9 @@ def _get_next_merged_dir(base_dir):
     return os.path.join(base_dir, AUTO_MERGE + str(max_idx + 1))
 
 
-def _merge_runs(trial_dir, successful_runs, language):
+def _merge_runs(trial_dir, successful_runs):
     """Wraps a list of successful runs into a single directory.
     Returns the directory name of the merged directory.
-    Only support python and java project now.
     """
     next_merged_dir = _get_next_merged_dir(os.getcwd())
     os.mkdir(next_merged_dir)
@@ -311,26 +310,11 @@ def _merge_runs(trial_dir, successful_runs, language):
     for run in successful_runs:
         print(os.path.join(trial_dir, run['name']))
 
-        if language == "python":
-            # Copy over the fuzzer for python project
-            src_file = os.path.join(trial_dir, run['name'], "fuzz_1.py")
-            dst_file = os.path.join(next_merged_dir, "fuzz_%d.py" % (idx))
-            idx += 1
-            shutil.copyfile(src_file, dst_file)
-        elif language == "jvm":
-            # Copy over the fuzzer for java project
-            src_file = os.path.join(trial_dir, run['name'], "Fuzz.java")
-            dst_file = os.path.join(next_merged_dir, "Fuzz%d.java" % (idx))
-
-            # Read in the content of the original Fuzz1.java, changing
-            # the class name to the new one and write the content to
-            # the new destination with new file name.
-            with open(src_file, "r") as fin:
-                with open(dst_file, "w") as fout:
-                    for line in fin:
-                        fout.write(line.replace('/*COUNTER*/', '%d' % (idx)))
-
-            idx += 1
+        # Copy over the fuzzer
+        src_file = os.path.join(trial_dir, run['name'], "fuzz_1.py")
+        dst_file = os.path.join(next_merged_dir, "fuzz_%d.py" % (idx))
+        idx += 1
+        shutil.copyfile(src_file, dst_file)
 
     # Copy over some base dfiles
     base_autofuzz = os.path.join(trial_dir, "base-autofuzz")
@@ -341,19 +325,6 @@ def _merge_runs(trial_dir, successful_runs, language):
     project_yaml = os.path.join(base_autofuzz, "project.yaml")
     shutil.copy(project_yaml, next_merged_dir)
 
-    # For java project, also copy the build bundle
-    if language == "jvm":
-        ant_path = os.path.join(base_autofuzz, "ant.zip")
-        ant_dst = os.path.join(next_merged_dir, "ant.zip")
-        maven_path = os.path.join(base_autofuzz, "maven.zip")
-        maven_dst = os.path.join(next_merged_dir, "maven.zip")
-        gradle_path = os.path.join(base_autofuzz, "gradle.zip")
-        gradle_dst = os.path.join(next_merged_dir, "gradle.zip")
-
-        shutil.copy(ant_path, ant_dst)
-        shutil.copy(maven_path, maven_dst)
-        shutil.copy(gradle_path, gradle_dst)
-
     for ld in os.listdir(base_autofuzz):
         if os.path.isdir(os.path.join(base_autofuzz, ld)) and ld != "work":
             # This is likely the folder containing the source code of the
@@ -363,7 +334,7 @@ def _merge_runs(trial_dir, successful_runs, language):
     return next_merged_dir
 
 
-def merge_run(target_directory, language="python"):
+def merge_run(target_directory):
     print("Merging run")
     # Get all succcessful directories in target module
     proj_yaml, trial_runs = interpret_autofuzz_run(target_directory)
@@ -381,14 +352,7 @@ def merge_run(target_directory, language="python"):
         return None
 
     print("Merging %d runs" % (len(successful_runs)))
-
-    # Merge operation for different language or
-    # None if language not supported
-    merged_project_dir = None
-    if language == "python" or language == "jvm":
-        merged_project_dir = _merge_runs(target_directory, successful_runs,
-                                         language)
-
+    merged_project_dir = _merge_runs(target_directory, successful_runs)
     return merged_project_dir
 
 

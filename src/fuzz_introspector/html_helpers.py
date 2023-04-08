@@ -447,7 +447,6 @@ def create_horisontal_calltree_image(image_name: str,
         # to avoid.
         logger.info("Could not import matplotlib. No bitmaps are created")
         return []
-
     logger.info(f"Creating image {image_name}")
 
     # Get the callsites of the profile as a list of colors.

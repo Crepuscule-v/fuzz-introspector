@@ -37,29 +37,19 @@ logger = logging.getLogger(name=__name__)
 
 
 class IntrospectionProject():
-    """Wrapper class for managing Fuzz Introspector analysis.
-
-    The most important two elments of this class are
-    `proj_profile` which is type :py:class:`project_profile.MergedProjectProfile` and
-    `profiles` which is a list of :py:class:`fuzzer_profile.FuzzerProfile` and
-    references the individual fuzzers of the given module. All analysis is done
-    basically by way of these two elements.
-    """
+    """Wrapper class for manging Fuzz Introspector analysis."""
 
     def __init__(self, language, target_folder, coverage_url):
         self.language = language
-        self.base_folder = target_folder
+        self.base_folder = target_folder            # simple-example-0/
         self.coverage_url = coverage_url
 
     def load_data_files(self, parallelise=True, correlation_file=None):
         self.profiles = data_loader.load_all_profiles(self.base_folder,
                                                       self.language,
                                                       parallelise)
-        """Generates the `proj_profile` and `profiles` elements of this class
-        based on the raw data given as arguments. This function must be called
-        before any real use of `IntrospectionProject` can happen.
-        """
         logger.info(f"Found {len(self.profiles)} profiles")
+        # 到目前为止, profile 对应的 coverage 数据仍然为空
         if len(self.profiles) == 0:
             logger.info("Found no profiles")
             raise DataLoaderError("No fuzzer profiles")
@@ -69,20 +59,19 @@ class IntrospectionProject():
         if correlation_dict is not None and "pairings" in correlation_dict:
             for profile in self.profiles:
                 profile.correlate_executable_name(correlation_dict)
-
         logger.info("[+] Accummulating profiles")
         for profile in self.profiles:
-            profile.accummulate_profile(self.base_folder)
+            profile.accummulate_profile(self.base_folder)           # 获取覆盖信息
 
         logger.info("[+] Creating project profile")
         self.proj_profile = project_profile.MergedProjectProfile(self.profiles)
-        self.proj_profile.coverage_url = self.coverage_url
+        self.proj_profile.coverage_url = self.coverage_url          # /covreport/linux
 
         logger.info("[+] Refining profiles")
         for profile in self.profiles:
-            profile.refine_paths(self.proj_profile.basefolder)
+            profile.refine_paths(self.proj_profile.basefolder)      # 根据目录修改路径
 
-        for profile in self.profiles:
+        for profile in self.profiles:   
             overlay_calltree_with_coverage(profile, self.proj_profile,
                                            self.coverage_url, self.base_folder)
 
@@ -215,6 +204,7 @@ def get_node_coverage_hitcount(demangled_name: str, callstack: Dict[int, str],
         node.cov_parent = "EP"
 
         node_hitcount = 0
+        # 找这个函数中被 hit 最多的行作为这个函数的 node_hitcount
         for (n_line_number, hit_count_cov) in coverage_data:
             node_hitcount = max(hit_count_cov, node_hitcount)
         is_first = False
@@ -224,6 +214,8 @@ def get_node_coverage_hitcount(demangled_name: str, callstack: Dict[int, str],
         logger.debug(f"Getting hit details {node.dst_function_name} -- "
                      f"{node.cov_ct_idx} -- {node.src_linenumber}")
 
+        # 就是一个函数调用点和函数实际入口的关系
+        # 通过查看该函数对应的父函数中，调用该函数的行被执行的次数来确定该函数的 hitcount 
         if profile.target_lang == "c-cpp":
             coverage_data = profile.coverage.get_hit_details(
                 callstack_get_parent(node, callstack))
@@ -302,6 +294,7 @@ def get_parent_callsite_link(node, callstack, profile, target_coverage_url):
     return "#"
 
 
+# 关于调用点的覆盖信息位于调用点所在函数的覆盖数据中
 def overlay_calltree_with_coverage(
         profile: fuzzer_profile.FuzzerProfile,
         proj_profile: project_profile.MergedProjectProfile, coverage_url: str,
@@ -311,7 +304,6 @@ def overlay_calltree_with_coverage(
     # information about a callsite is located in coverage data of the function
     # in which the callsite is placed.
     callstack: Dict[int, str] = dict()
-
     if profile.coverage is None:
         return
 
@@ -323,10 +315,12 @@ def overlay_calltree_with_coverage(
     target_name = profile.identifier
     target_coverage_url = utils.get_target_coverage_url(
         coverage_url, target_name, profile.target_lang)
-    logger.info(f"Using coverage url: {target_coverage_url}")
 
-    for node in cfg_load.extract_all_callsites(
-            profile.fuzzer_callsite_calltree):
+    logger.info(f"Using coverage url: {target_coverage_url}")
+    # cfg_load.print_ctcs_tree(profile.fuzzer_callsite_calltree)
+
+    # cfg_load.print_ctcs_tree(profile.fuzzer_callsite_calltree)
+    for node in cfg_load.extract_all_callsites(profile.fuzzer_callsite_calltree): 
         node.cov_ct_idx = ct_idx
         ct_idx += 1
 
@@ -345,13 +339,20 @@ def overlay_calltree_with_coverage(
         node.cov_hitcount = get_node_coverage_hitcount(demangled_name,
                                                        callstack, node,
                                                        profile, is_first)
+        # print(str(node.src_linenumber) + "  " + str(node.cov_hitcount))
         is_first = False
 
         node.cov_color = get_hit_count_color(node.cov_hitcount)
+        # 这个应该是用来做跳转用的
         node.cov_link = get_url_to_cov_report(profile, node,
                                               target_coverage_url)
         node.cov_callsite_link = get_parent_callsite_link(
             node, callstack, profile, target_coverage_url)
+        print(node.dst_function_name)
+        print(node.cov_link)
+        print(node.cov_callsite_link)
+        print()
+    
     # For python, do a hack where we check if any node is covered, and, if so,
     # ensure the entrypoint is covered.
     all_nodes = cfg_load.extract_all_callsites(
@@ -441,9 +442,11 @@ def overlay_calltree_with_coverage(
             'function_name':
             blk.function_name
         })
+
     json_report.add_fuzzer_key_value_to_report(profile.identifier,
                                                'branch_blockers',
                                                branch_blockers_list)
+    print("########")
 
 
 def update_branch_complexities(
@@ -512,13 +515,13 @@ def detect_branch_level_blockers(
             function_name, rest_string = branch_string.rsplit(':', maxsplit=1)
             line_number, column_number = rest_string.split(',')
         except ValueError:
-            logger.debug(
+            logger.error(
                 f"branch-profiling: error getting function name from {branch_string}"
             )
             continue
 
         if function_name not in functions_profile:
-            logger.debug(
+            logger.error(
                 f"branch-profiling: func name not in functions_profile {function_name}"
             )
             continue

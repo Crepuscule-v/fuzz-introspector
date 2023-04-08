@@ -50,7 +50,6 @@ def read_fuzzer_data_file_to_profile(
         return None
 
     profile = fuzzer_profile.FuzzerProfile(cfg_file, data_dict_yaml, language)
-
     if not profile.has_entry_point():
         logger.info("Found no entrypoints")
         return None
@@ -71,9 +70,11 @@ def load_all_profiles(
         parallelise: bool = True) -> List[fuzzer_profile.FuzzerProfile]:
     """Loads all profiles in target_folder in a multi-threaded manner"""
     profiles = []
+    # 读取函数 call tree 文件
     data_files = utils.get_all_files_in_tree_with_regex(
-        target_folder, "fuzzerLogFile.*\.data$")
+        target_folder, "fuzzerLogFile.*\.data$")                     
     logger.info(f" - found {len(data_files)} profiles to load")
+    print("data_files : " + str(data_files))
     if parallelise:
         manager = multiprocessing.Manager()
         return_dict = manager.dict()
@@ -86,7 +87,7 @@ def load_all_profiles(
             p.start()
         for proc in jobs:
             proc.join()
-
+ 
         for k, v in return_dict.items():
             profiles.append(v)
     else:
@@ -95,7 +96,7 @@ def load_all_profiles(
             _load_profile(data_file, language, return_dict_gen)
         for k, v in return_dict_gen.items():
             profiles.append(v)
-
+    
     return profiles
 
 

@@ -30,6 +30,7 @@ from fuzz_introspector.datatypes import (
 logger = logging.getLogger(name=__name__)
 
 
+
 class EngineInput(analysis.AnalysisInterface):
     name: str = "FuzzEngineInputAnalysis"
 

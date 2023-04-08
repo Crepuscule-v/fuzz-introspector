@@ -58,10 +58,10 @@ def run_analysis_on_dir(target_folder: str,
 
     introspection_proj = analysis.IntrospectionProject(language, target_folder,
                                                        coverage_url)
-    introspection_proj.load_data_files(parallelise, correlation_file)
-
+    introspection_proj.load_data_files(parallelise, correlation_file)               # 获取并设置覆盖信息
     logger.info(f"Analyses to run: {str(analyses_to_run)}")
     logger.info("[+] Creating HTML report")
+
     html_report.create_html_report(introspection_proj, analyses_to_run,
                                    output_json, report_name, dump_files)
 

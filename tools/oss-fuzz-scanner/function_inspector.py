@@ -13,7 +13,6 @@
 # limitations under the License.
 """Module for reporting details about a function in a project."""
 
-import sys
 import scanner
 
 
@@ -41,10 +40,4 @@ def print_function_details(project_name, functions_to_analyse):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print(
-            "Usage: python3 function_inspector.py project_name function_name")
-        sys.exit(0)
-    project_name = sys.argv[1]
-    function_name = sys.argv[2]
-    print_function_details(project_name, [function_name])
+    print_function_details('htslib', ['zlib_mem_inflate', 'vcf_write'])

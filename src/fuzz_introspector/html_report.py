@@ -86,10 +86,11 @@ def create_all_function_table(
         hit_percentage = proj_profile.get_func_hit_percentage(
             demangled_func_name)
 
+        # 设置对应函数的 cov url 
         func_cov_url = proj_profile.resolve_coverage_report_link(
             coverage_url, fd.function_source_file, fd.function_linenumber,
             fd.function_name)
-
+        
         if proj_profile.runtime_coverage.is_func_hit(fd.function_name):
             func_hit_at_runtime_row = "yes"
         else:
@@ -379,6 +380,7 @@ def create_fuzzer_detailed_section(
         image_name, profile, dump_files)
     html_string += f"<img class=\"colormap\" src=\"{image_name}\">"
 
+
     # At this point we want to ensure there is coverage in order to proceed.
     # If there is no code coverage then the remaining will be quite bloat
     # in that it's all dependent on code coverage. As such we exit early
@@ -435,6 +437,7 @@ def create_fuzzer_profile_section_blocker_table(profile, profile_idx, tables,
             link=f"fuzz_blocker{profile_idx}")
         html_string += html_fuzz_blocker_table
     return html_string
+
 
 
 def create_fuzzer_profile_section_files_hit(profile, profile_idx,
@@ -670,7 +673,6 @@ def create_html_report(introspection_proj: analysis.IntrospectionProject,
     proj_profile = introspection_proj.proj_profile
     coverage_url = introspection_proj.proj_profile.coverage_url
     basefolder = introspection_proj.proj_profile.basefolder
-
     # Main logic
     tables: List[str] = list()
     table_of_contents: html_helpers.HtmlTableOfContents = html_helpers.HtmlTableOfContents(

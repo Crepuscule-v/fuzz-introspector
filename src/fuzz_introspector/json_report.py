@@ -45,7 +45,6 @@ def _overwrite_report_with_dict(new_dict: Dict[Any, Any]) -> None:
     with open(constants.SUMMARY_FILE, 'w') as report_fd:
         json.dump(dict(new_dict), report_fd)
 
-
 def add_analysis_dict_to_json_report(analysis_name: str,
                                      dict_to_add: Dict[Any, Any]) -> None:
     """Wraps dictionary into an appropriate format

@@ -55,7 +55,7 @@ class CoverageProfile:
     """
 
     def __init__(self) -> None:
-        self.covmap: Dict[str, List[Tuple[int, int]]] = dict()
+        self.covmap: Dict[str, List[Tuple[int, int]]] = dict()               # function name : line number, hit count 
         self.file_map: Dict[str, List[Tuple[int, int]]] = dict()
         self.branch_cov_map: Dict[str, List[int]] = dict()
         self._cov_type = ""
@@ -407,6 +407,7 @@ def extract_hitcount(input: str) -> int:
 
 def load_llvm_coverage(target_dir: str,
                        target_name: Optional[str] = None) -> CoverageProfile:
+    # target_name 指定对应的可执行文件，e.g. fuzzer 
     """
     Scans a directory to read one or more coverage reports, and returns a CoverageProfile
 
@@ -432,7 +433,7 @@ def load_llvm_coverage(target_dir: str,
         logger.info(f"Loading LLVM coverage for target {target_name}")
     else:
         logger.info(f"Loading LLVM coverage for directory {target_dir}")
-
+    
     all_coverage_reports = utils.get_all_files_in_tree_with_regex(
         target_dir, ".*\.covreport$")
     logger.info(f"Found {len(all_coverage_reports)} coverage reports")
@@ -451,9 +452,11 @@ def load_llvm_coverage(target_dir: str,
         coverage_reports = all_coverage_reports
 
     logger.info(f"Using the following coverages {coverage_reports}")
+    
     cp = CoverageProfile()
     cp.set_type("function")
     for profile_file in coverage_reports:
+        # profile : fuzzer.covreport 
         cp.coverage_files.append(profile_file)
         logger.info(f"Reading coverage report: {profile_file}")
         with open(profile_file, 'rb') as pf:
@@ -462,6 +465,7 @@ def load_llvm_coverage(target_dir: str,
             switch_line_number = None
             case_line_numbers: Set[int] = set()
             for raw_line in pf:
+                print(raw_line)
                 line = utils.safe_decode(raw_line)
                 if line is None:
                     continue
@@ -469,19 +473,24 @@ def load_llvm_coverage(target_dir: str,
                 line = line.replace("\n", "")
                 logger.debug(f"cov-readline: { line }")
 
-                # Parse lines that signal function names. These linse indicate that the
+                # Parse lines that signal function names. These lines indicate that the
                 # lines following this line will be the specific source code lines of
                 # the given function.
                 # Example line:
                 #  "LLVMFuzzerTestOneInput:\n"
-                if len(line) > 0 and line[-1] == ":" and "|" not in line:
+                if len(line) > 0 and line[-1] == ":" and "|" not in line:       # 先找表示函数名的行
                     if len(line.split(":")) == 3:
                         curr_func = line.split(":")[1].replace(" ",
                                                                "").replace(
                                                                    ":", "")
                     else:
                         curr_func = line.replace(" ", "").replace(":", "")
-                    curr_func = utils.demangle_cpp_func(curr_func)
+                    # 编译器会将 C++ 符号名称（如函数名、类名）转换为一种称为 "mangled" 或 "decorated" 的格式
+                    # 这种格式可以确保生成的二进制代码中的每个符号名称都是唯一的
+                    # 然而，这种 "mangled" 名称通常难以阅读和理解
+                    print("curr_func : ", end="")
+                    print(curr_func)
+                    curr_func = utils.demangle_cpp_func(curr_func)             
                     cp.covmap[curr_func] = list()
                     switch_string = ''
                     switch_line_number = None
@@ -583,6 +592,7 @@ def load_llvm_coverage(target_dir: str,
                     # Write out numbers e.g. 1.2k into 1200 and 5.99M to 5990000
                     try:
                         hit_times = extract_hitcount(line.split("|")[1])
+                        print(hit_times)
                         if hit_times == -1:
                             continue
                     except Exception:
