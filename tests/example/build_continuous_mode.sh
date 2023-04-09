@@ -1,4 +1,4 @@
-ROOT=$PWD
+rurROOT=$PWD
 export FUZZ_INTROSPECTOR=1
 # Compilation-based Static analysis
 rm -r ./work ./web
