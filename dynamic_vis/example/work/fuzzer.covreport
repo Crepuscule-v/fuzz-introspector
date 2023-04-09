@@ -1,0 +1,16 @@
+_Z23count_uppercase_lettersPKhm:
+    5|  3.39M|size_t count_uppercase_letters(const uint8_t *data, size_t size) {
+    6|  3.39M|    size_t count = 0;
+    7|   175M|    for (size_t i = 0; i < size; i++) {
+    8|   171M|        if (data[i] >= 'A' && data[i] <= 'Z') {
+    9|  30.1M|            count++;
+   10|  30.1M|        }
+   11|   171M|    }
+   12|  3.39M|    return count;
+   13|  3.39M|}
+LLVMFuzzerTestOneInput:
+   16|  3.39M|extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
+   17|  3.39M|    count_uppercase_letters(data, size);
+   18|  3.39M|    return 0;
+   19|  3.39M|}
+

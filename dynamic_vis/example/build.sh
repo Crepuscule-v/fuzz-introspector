@@ -1,12 +1,21 @@
 #! /bin/bash 
-CLANG=../../build/llvm-build/bin/clang++
-OPT=../../build/llvm-build/bin/opt
+CLANG=../../../build/llvm-build/bin/clang++
+OPT=../../../build/llvm-build/bin/opt
 
-$CLANG -S -emit-llvm fuzzer.cpp -o fuzzer.ll
+rm -rf ./work
+mkdir work
+cd work
 
+$CLANG -S -emit-llvm ../fuzzer.cpp -o fuzzer.ll
 # 导出函数调用图 CG 
 $OPT -dot-callgraph -enable-new-pm=0 -disable-output fuzzer.ll
 
 # 导出每个函数的控制流图 CFG 
 $OPT -dot-cfg -enable-new-pm=0 -disable-output fuzzer.ll
 
+# 首先基于 fuzz-introspector 进行编译时静态分析，获取对所有函数的 func warpper 
+export FUZZ_INTROSPECTOR=1
+$CLANG -fsanitize=fuzzer -flto ../fuzzer.cpp -o fuzzer
+cd ..
+# 生成 exe_to_fuzz_introspector_logs.yaml
+python3 ../../src/main.py correlate --binaries_dir=./work/

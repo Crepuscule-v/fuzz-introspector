@@ -1,5 +1,0 @@
-digraph "CFG for 'LLVMFuzzerTestOneInput' function" {
-	label="CFG for 'LLVMFuzzerTestOneInput' function";
-
-	Node0x555911a8e7e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %data.addr = alloca i8*, align 8\l  %size.addr = alloca i64, align 8\l  store i8* %data, i8** %data.addr, align 8\l  store i64 %size, i64* %size.addr, align 8\l  %0 = load i8*, i8** %data.addr, align 8\l  %1 = load i64, i64* %size.addr, align 8\l  %call = call noundef i64 @_Z23count_uppercase_lettersPKhm(i8* noundef %0,\l... i64 noundef %1)\l  ret i32 0\l}"];
-}

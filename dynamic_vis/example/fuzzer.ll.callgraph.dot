@@ -1,7 +1,0 @@
-digraph "Call graph: fuzzer.ll" {
-	label="Call graph: fuzzer.ll";
-
-	Node0x55c7b72da030 [shape=record,label="{_Z23count_uppercase_lettersPKhm}"];
-	Node0x55c7b72da0e0 [shape=record,label="{LLVMFuzzerTestOneInput}"];
-	Node0x55c7b72da0e0 -> Node0x55c7b72da030;
-}
