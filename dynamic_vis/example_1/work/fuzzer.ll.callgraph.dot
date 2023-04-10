@@ -1,0 +1,29 @@
+digraph "Call graph: fuzzer.ll" {
+	label="Call graph: fuzzer.ll";
+
+	Node0x559c18b32110 [shape=record,label="{__cxx_global_var_init}"];
+	Node0x559c18b32110 -> Node0x559c18b32200;
+	Node0x559c18b32110 -> Node0x559c18b326c0;
+	Node0x559c18b327d0 [shape=record,label="{_ZNSt8ios_base4InitD1Ev}"];
+	Node0x559c18b326c0 [shape=record,label="{__cxa_atexit}"];
+	Node0x559c18b32990 [shape=record,label="{_Z9functionAi}"];
+	Node0x559c18b32990 -> Node0x559c18b32a10;
+	Node0x559c18b32990 -> Node0x559c18b32ac0;
+	Node0x559c18b32990 -> Node0x559c18b32b40;
+	Node0x559c18b32990 -> Node0x559c18b32c70;
+	Node0x559c18b32200 [shape=record,label="{_ZNSt8ios_base4InitC1Ev}"];
+	Node0x559c18b32ac0 [shape=record,label="{_ZNSolsEi}"];
+	Node0x559c18b32b40 [shape=record,label="{_ZNSolsEPFRSoS_E}"];
+	Node0x559c18b32c70 [shape=record,label="{_Z9functionBi}"];
+	Node0x559c18b32c70 -> Node0x559c18b32a10;
+	Node0x559c18b32c70 -> Node0x559c18b32ac0;
+	Node0x559c18b32c70 -> Node0x559c18b32b40;
+	Node0x559c18b32c70 -> Node0x559c18b32990;
+	Node0x559c18b32ea0 [shape=record,label="{_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_}"];
+	Node0x559c18b32a10 [shape=record,label="{_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc}"];
+	Node0x559c18b33210 [shape=record,label="{LLVMFuzzerTestOneInput}"];
+	Node0x559c18b33210 -> Node0x559c18b32990;
+	Node0x559c18b33310 [shape=record,label="{_GLOBAL__sub_I_fuzzer.cpp}"];
+	Node0x559c18b33310 -> Node0x559c18b32110;
+	Node0x559c18b33290 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+}

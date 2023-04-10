@@ -1,0 +1,3 @@
+pairings:
+- executable_path: ./work/fuzzer
+  fuzzer_log_file: fuzzerLogFile-0-0UDA86XxvG

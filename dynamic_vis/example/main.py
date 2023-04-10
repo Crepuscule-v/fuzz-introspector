@@ -1,7 +1,7 @@
 import sys
 sys.path.append("../../src/")
 
-from fuzz_introspector import constants, analysis
+from fuzz_introspector import constants, analysis, cfg_load
 from fuzz_introspector.datatypes import fuzzer_profile
 import logging, os, shlex
 import time, subprocess
@@ -18,7 +18,6 @@ def set_logging_level() -> None:
         logging.basicConfig(level=logging.INFO)
     logger.debug("Logging level set")
 
-
 def build_introspection_proj() -> analysis.IntrospectionProject :
     language = "c-cpp"
     target_dir = "./work/"
@@ -27,6 +26,16 @@ def build_introspection_proj() -> analysis.IntrospectionProject :
     # 构建一个 introspection 对象
     introspector_target = analysis.IntrospectionProject(language, target_dir, coverage_url)
     introspector_target.load_data_files(True, correlation_file)
+    for profile in introspector_target.profiles:
+        for node in cfg_load.extrace_all_callsite(profile.fuzzer_callsite_calltree):
+            print("-------------")
+            print(node.dst_function_name)
+            print(node.src_function_name)
+            print(node.cov_hitcount)
+            print("-------------")
+        # cfg_load.print_ctcs_tree(profile.fuzzer_callsite_calltree)
+        
+    exit(0)
     return introspector_target
 
 def parse_command(command_str) -> list:
@@ -60,13 +69,15 @@ def run():
             profile.accummulate_profile( introspection_target.base_folder)
             analysis.overlay_calltree_with_coverage(profile, introspection_target.proj_profile, introspection_target.coverage_url, introspection_target.base_folder)
             cp = profile.coverage
-            print(cp.covmap)
-            print(cp.coverage_files)
-            print(cp.branch_cov_map)
-        print ("#############")
+            # print(cp.covmap)
+            # print(cp.coverage_files)
+            # print(cp.branch_cov_map)
+        with open("result.json", "a") as file:
+            file.write(str(cp.covmap))
 
-    
 
 if __name__ == "__main__":
     set_logging_level()
     run()
+
+

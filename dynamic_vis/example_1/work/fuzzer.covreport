@@ -1,0 +1,36 @@
+_Z9functionAi:
+   11|  1.42M|void functionA(int count) {
+   12|  1.42M|    if (count <= 0) {
+   13|   367k|        return;
+   14|   367k|    }
+   15|       |
+   16|  1.05M|    std::cout << "This is functionA, count: " << count << std::endl;
+   17|       |
+   18|  1.05M|    functionB(count - 1);
+   19|  1.05M|}
+_Z9functionBi:
+   21|  1.05M|void functionB(int count) {
+   22|  1.05M|    if (count <= 0) {
+   23|   189k|        return;
+   24|   189k|    }
+   25|       |
+   26|   863k|    std::cout << "This is functionB, count: " << count << std::endl;
+   27|       |
+   28|   863k|    functionA(count - 1);
+   29|   863k|}
+LLVMFuzzerTestOneInput:
+   31|   658k|int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
+   32|   658k|    if (size < sizeof(int)) {
+   33|   101k|        return 0;
+   34|   101k|    }
+   35|       |
+   36|   557k|    int initialCount;
+   37|   557k|    memcpy(&initialCount, data, sizeof(int));
+   38|       |
+   39|       |    // Limit the initialCount to avoid deep recursion
+   40|   557k|    initialCount = initialCount % 10;
+   41|       |
+   42|   557k|    functionA(initialCount);
+   43|   557k|    return 0;
+   44|   658k|}
+
