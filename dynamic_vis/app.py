@@ -39,9 +39,9 @@ def handle_chat_message(data):
 def handle_game_move(data):
     print('Game move:', data)
 
-@app.route('/chat')
-def chat():
-    return render_template('chat.html')
+# @app.route('/chat')
+# def chat():
+#     return render_template('chat.html')
 
 if __name__ == '__main__':
     socketio.run(app)

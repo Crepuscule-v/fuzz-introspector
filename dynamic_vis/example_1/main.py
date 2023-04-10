@@ -85,7 +85,8 @@ def update_coverage_info():
         subprocess.run(cmd2, check=True, stdout=outfile)
 
 def update_data_dict(cp : CoverageProfile):
-    
+    pass
+
 
 def run():
     introspection_target = build_introspection_proj()
@@ -109,5 +110,3 @@ def run():
 if __name__ == "__main__":
     set_logging_level()
     run()
-
-
