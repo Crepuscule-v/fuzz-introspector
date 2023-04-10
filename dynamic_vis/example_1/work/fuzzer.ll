@@ -44,10 +44,12 @@ declare dso_local void @_ZNSt8ios_base4InitD1Ev(%"class.std::ios_base::Init"* no
 declare dso_local i32 @__cxa_atexit(void (i8*)*, i8*, i8*) #3
 
 ; Function Attrs: mustprogress noinline optnone uwtable
-define dso_local void @_Z9functionAi(i32 noundef %count) #4 {
+define dso_local void @_Z9functionAii(i32 noundef %count, i32 noundef %b) #4 {
 entry:
   %count.addr = alloca i32, align 4
+  %b.addr = alloca i32, align 4
   store i32 %count, i32* %count.addr, align 4
+  store i32 %b, i32* %b.addr, align 4
   %0 = load i32, i32* %count.addr, align 4
   %cmp = icmp sle i32 %0, 0
   br i1 %cmp, label %if.then, label %if.end
@@ -96,7 +98,7 @@ if.end:                                           ; preds = %entry
   %call2 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEPFRSoS_E(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %call1, %"class.std::basic_ostream"* (%"class.std::basic_ostream"*)* noundef @_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_)
   %2 = load i32, i32* %count.addr, align 4
   %sub = sub nsw i32 %2, 1
-  call void @_Z9functionAi(i32 noundef %sub)
+  call void @_Z9functionAii(i32 noundef %sub, i32 noundef 0)
   br label %return
 
 return:                                           ; preds = %if.end, %if.then
@@ -128,7 +130,7 @@ if.end:                                           ; preds = %entry
   %rem = srem i32 %3, 10
   store i32 %rem, i32* %initialCount, align 4
   %4 = load i32, i32* %initialCount, align 4
-  call void @_Z9functionAi(i32 noundef %4)
+  call void @_Z9functionAii(i32 noundef %4, i32 noundef 0)
   store i32 0, i32* %retval, align 4
   br label %return
 

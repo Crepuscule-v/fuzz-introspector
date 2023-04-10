@@ -1,36 +1,31 @@
-_Z9functionAi:
-   11|  1.42M|void functionA(int count) {
-   12|  1.42M|    if (count <= 0) {
-   13|   367k|        return;
-   14|   367k|    }
-   15|       |
-   16|  1.05M|    std::cout << "This is functionA, count: " << count << std::endl;
-   17|       |
-   18|  1.05M|    functionB(count - 1);
-   19|  1.05M|}
+_Z9functionAii:
+   11|  32.0k|
+   12|  32.0k|    std::cout << "This is functionA, count: " << count << std::endl;
+   13|  8.09k|
+   14|  8.09k|    functionB(count - 1);
+   15|       |}
+   16|  23.9k|
+   17|       |void functionB(int count) {
+   18|  23.9k|    if (count <= 0) {
+   19|  23.9k|        return;
 _Z9functionBi:
-   21|  1.05M|void functionB(int count) {
-   22|  1.05M|    if (count <= 0) {
-   23|   189k|        return;
-   24|   189k|    }
+   21|  23.9k|    std::cout << "This is functionB, count: " << count << std::endl;
+   22|  23.9k|
+   23|  4.79k|    functionA(count - 1, 0);
+   24|  4.79k|}
    25|       |
-   26|   863k|    std::cout << "This is functionB, count: " << count << std::endl;
-   27|       |
-   28|   863k|    functionA(count - 1);
-   29|   863k|}
+   26|  19.1k|extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
+   27|       |    if (size < sizeof(int)) {
+   28|  19.1k|        return 0;
+   29|  19.1k|    }
 LLVMFuzzerTestOneInput:
-   31|   658k|int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
-   32|   658k|    if (size < sizeof(int)) {
-   33|   101k|        return 0;
-   34|   101k|    }
-   35|       |
-   36|   557k|    int initialCount;
-   37|   557k|    memcpy(&initialCount, data, sizeof(int));
-   38|       |
-   39|       |    // Limit the initialCount to avoid deep recursion
-   40|   557k|    initialCount = initialCount % 10;
-   41|       |
-   42|   557k|    functionA(initialCount);
-   43|   557k|    return 0;
-   44|   658k|}
+   31|  15.2k|    int initialCount;
+   32|  15.2k|    memcpy(&initialCount, data, sizeof(int));
+   33|  2.38k|
+   34|  2.38k|    // Limit the initialCount to avoid deep recursion
+   35|       |    initialCount = initialCount % 10;
+   36|  12.8k|
+   37|  12.8k|    functionA(initialCount, 0);
+   38|       |    return 0;
+   39|       |}
 

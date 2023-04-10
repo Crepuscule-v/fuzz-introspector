@@ -1,0 +1,298 @@
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    _GLOBAL__sub_I_fuzzer.cpp
+      functionSourceFile: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+      linkageType:     InternalLinkage
+      functionLinenumber: 0
+      functionDepth:   0
+      returnType:      'N/A'
+      argCount:        0
+      argTypes:        []
+      constantsTouched: []
+      argNames:        []
+      BBCount:         3
+      ICount:          12
+      EdgeCount:       3
+      CyclomaticComplexity: 2
+      functionsReached:
+        - __cxx_global_var_init
+      functionUses:    0
+      BranchProfiles:  []
+      Callsites:
+        - Src:             '../fuzzer.cpp:0,0'
+          Dst:             __cxx_global_var_init
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    __cxx_global_var_init
+      functionSourceFile: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+      linkageType:     InternalLinkage
+      functionLinenumber: 0
+      functionDepth:   0
+      returnType:      'N/A'
+      argCount:        0
+      argTypes:        []
+      constantsTouched: []
+      argNames:        []
+      BBCount:         3
+      ICount:          13
+      EdgeCount:       3
+      CyclomaticComplexity: 2
+      functionsReached:
+        - _ZNSt8ios_base4InitC1Ev
+        - __cxa_atexit
+      functionUses:    1
+      BranchProfiles:  []
+      Callsites:
+        - Src:             '/usr/lib/gcc/x86_64-linux-gnu/9/../../../../include/c++/9/iostream:74,25'
+          Dst:             _ZNSt8ios_base4InitC1Ev
+        - Src:             '../fuzzer.cpp:0,0'
+          Dst:             __cxa_atexit
+        - Src:             '../fuzzer.cpp:0,0'
+          Dst:             _ZNSt8ios_base4InitD1Ev
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    _ZNSt8ios_base4InitC1Ev
+      functionSourceFile: ''
+      linkageType:     externalLinkage
+      functionLinenumber: -1
+      functionDepth:   0
+      returnType:      'N/A'
+      argCount:        1
+      argTypes:
+        - 'class.std::ios_base::Init *'
+      constantsTouched: []
+      argNames:
+        - ''
+      BBCount:         0
+      ICount:          0
+      EdgeCount:       0
+      CyclomaticComplexity: 2
+      functionsReached: []
+      functionUses:    1
+      BranchProfiles:  []
+      Callsites:       []
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    _ZNSt8ios_base4InitD1Ev
+      functionSourceFile: ''
+      linkageType:     externalLinkage
+      functionLinenumber: -1
+      functionDepth:   0
+      returnType:      'N/A'
+      argCount:        1
+      argTypes:
+        - 'class.std::ios_base::Init *'
+      constantsTouched: []
+      argNames:
+        - ''
+      BBCount:         0
+      ICount:          0
+      EdgeCount:       0
+      CyclomaticComplexity: 2
+      functionsReached: []
+      functionUses:    0
+      BranchProfiles:  []
+      Callsites:       []
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    __cxa_atexit
+      functionSourceFile: ''
+      linkageType:     externalLinkage
+      functionLinenumber: -1
+      functionDepth:   0
+      returnType:      'int '
+      argCount:        3
+      argTypes:
+        - 'func_type *'
+        - 'char *'
+        - 'char *'
+      constantsTouched: []
+      argNames:
+        - ''
+        - ''
+        - ''
+      BBCount:         0
+      ICount:          0
+      EdgeCount:       0
+      CyclomaticComplexity: 2
+      functionsReached: []
+      functionUses:    1
+      BranchProfiles:  []
+      Callsites:       []
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    LLVMFuzzerTestOneInput
+      functionSourceFile: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+      linkageType:     externalLinkage
+      functionLinenumber: 31
+      functionDepth:   0
+      returnType:      'int '
+      argCount:        2
+      argTypes:
+        - 'char *'
+        - 'size_t '
+      constantsTouched: []
+      argNames:
+        - ''
+        - ''
+      BBCount:         6
+      ICount:          43
+      EdgeCount:       7
+      CyclomaticComplexity: 3
+      functionsReached:
+        - _Z9functionAii
+      functionUses:    0
+      BranchProfiles:  []
+      Callsites:
+        - Src:             '../fuzzer.cpp:42,5'
+          Dst:             _Z9functionAii
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    _Z9functionAii
+      functionSourceFile: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+      linkageType:     InternalLinkage
+      functionLinenumber: 11
+      functionDepth:   0
+      returnType:      'N/A'
+      argCount:        2
+      argTypes:
+        - 'int '
+        - 'int '
+      constantsTouched: []
+      argNames:
+        - ''
+        - ''
+      BBCount:         6
+      ICount:          36
+      EdgeCount:       7
+      CyclomaticComplexity: 3
+      functionsReached:
+        - _Z9functionBi
+        - _ZNSolsEi
+      functionUses:    2
+      BranchProfiles:  []
+      Callsites:
+        - Src:             '../fuzzer.cpp:16,47'
+          Dst:             _ZNSolsEi
+        - Src:             '../fuzzer.cpp:16,56'
+          Dst:             _ZNSolsEPFRSoS_E
+        - Src:             '../fuzzer.cpp:18,5'
+          Dst:             _Z9functionBi
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    _ZNSolsEi
+      functionSourceFile: ''
+      linkageType:     externalLinkage
+      functionLinenumber: -1
+      functionDepth:   0
+      returnType:      'class.std::basic_ostream *'
+      argCount:        2
+      argTypes:
+        - 'class.std::basic_ostream *'
+        - 'int '
+      constantsTouched: []
+      argNames:
+        - ''
+        - ''
+      BBCount:         0
+      ICount:          0
+      EdgeCount:       0
+      CyclomaticComplexity: 2
+      functionsReached: []
+      functionUses:    2
+      BranchProfiles:  []
+      Callsites:       []
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    _ZNSolsEPFRSoS_E
+      functionSourceFile: ''
+      linkageType:     externalLinkage
+      functionLinenumber: -1
+      functionDepth:   0
+      returnType:      'class.std::basic_ostream *'
+      argCount:        2
+      argTypes:
+        - 'class.std::basic_ostream *'
+        - 'func_type *'
+      constantsTouched: []
+      argNames:
+        - ''
+        - ''
+      BBCount:         0
+      ICount:          0
+      EdgeCount:       0
+      CyclomaticComplexity: 2
+      functionsReached: []
+      functionUses:    2
+      BranchProfiles:  []
+      Callsites:       []
+...
+---
+Fuzzer filename: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+All functions:
+  Function list name: All functions
+  Elements:
+    - functionName:    _Z9functionBi
+      functionSourceFile: '/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp'
+      linkageType:     InternalLinkage
+      functionLinenumber: 21
+      functionDepth:   0
+      returnType:      'N/A'
+      argCount:        1
+      argTypes:
+        - 'int '
+      constantsTouched: []
+      argNames:
+        - ''
+      BBCount:         6
+      ICount:          33
+      EdgeCount:       7
+      CyclomaticComplexity: 3
+      functionsReached:
+        - _Z9functionAii
+        - _ZNSolsEi
+      functionUses:    1
+      BranchProfiles:  []
+      Callsites:
+        - Src:             '../fuzzer.cpp:26,47'
+          Dst:             _ZNSolsEi
+        - Src:             '../fuzzer.cpp:26,56'
+          Dst:             _ZNSolsEPFRSoS_E
+        - Src:             '../fuzzer.cpp:28,5'
+          Dst:             _Z9functionAii
+...

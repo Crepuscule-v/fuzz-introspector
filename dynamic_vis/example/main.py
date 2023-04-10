@@ -3,6 +3,7 @@ sys.path.append("../../src/")
 
 from fuzz_introspector import constants, analysis, cfg_load
 from fuzz_introspector.datatypes import fuzzer_profile
+from process_cg import process_cg
 import logging, os, shlex
 import time, subprocess
 logger = logging.getLogger(name=__name__)
@@ -26,12 +27,12 @@ def build_introspection_proj() -> analysis.IntrospectionProject :
     # 构建一个 introspection 对象
     introspector_target = analysis.IntrospectionProject(language, target_dir, coverage_url)
     introspector_target.load_data_files(True, correlation_file)
+    data_dict = 
     for profile in introspector_target.profiles:
         for node in cfg_load.extrace_all_callsite(profile.fuzzer_callsite_calltree):
             print("-------------")
             print(node.dst_function_name)
             print(node.src_function_name)
-            print(node.cov_hitcount)
             print("-------------")
         # cfg_load.print_ctcs_tree(profile.fuzzer_callsite_calltree)
         
@@ -50,7 +51,7 @@ def update_coverage_info():
     cmd0 = parse_command(BASH_COMMAND_LIST[0])
     cmd1 = parse_command(BASH_COMMAND_LIST[1])
     cmd2 = parse_command(BASH_COMMAND_LIST[2])
-
+    
     subprocess.run(cmd0, check=True)
     with open("./work/fuzzer.covreport", "w") as outfile:
         subprocess.run(cmd1, check=True, stdout=outfile)
