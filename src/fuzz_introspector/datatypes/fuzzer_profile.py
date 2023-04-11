@@ -50,7 +50,7 @@ class FuzzerProfile:
         self.all_class_functions: Dict[
             str, function_profile.FunctionProfile] = dict()         # func -> func profile 
         self.branch_blockers: List[Any] = []
-
+        
         self._target_lang = target_lang
         self.introspector_data_file = cfg_file
 
@@ -242,7 +242,7 @@ class FuzzerProfile:
                     func].functions_reached:
                 worklist.append((func_reached, 0))
             visited = set()
-
+            
             while len(worklist) > 0:
                 elem, depth = worklist.pop()
                 if depth > max_depth:
@@ -506,7 +506,8 @@ class FuzzerProfile:
             if self.target_lang == "jvm" and "<init>" in elem['functionName']:
                 logger.debug("Skipping <init> method for JVM")
                 continue
-
+            
+            
             func_profile = function_profile.FunctionProfile(elem)
             logger.debug(f"Adding {func_profile.function_name}")
             self.all_class_functions[func_profile.function_name] = func_profile

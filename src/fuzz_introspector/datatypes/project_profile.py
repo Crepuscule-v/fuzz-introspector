@@ -53,7 +53,7 @@ class MergedProjectProfile:
         for profile in profiles:
             for func_name in profile.functions_reached_by_fuzzer:
                 self.functions_reached.add(func_name)
-
+        
         # Set all unreached functions
         logger.info("Populating functions unreached")
         for profile in profiles:
@@ -74,6 +74,7 @@ class MergedProjectProfile:
 
                 # populate hitcount and reached_by_fuzzers and whether it has been handled already
                 for profile2 in profiles:
+                    
                     if profile2.reaches_func(fd.function_name):
                         fd.hitcount += 1
                         fd.reached_by_fuzzers.append(profile2.identifier)
@@ -103,6 +104,7 @@ class MergedProjectProfile:
                 total_cyclomatic_complexity += reached_func_obj.cyclomatic_complexity
                 if reached_func_obj.hitcount == 0:
                     total_new_complexity += reached_func_obj.cyclomatic_complexity
+
             if fp_obj.hitcount == 0:
                 fp_obj.new_unreached_complexity = (
                     total_new_complexity + fp_obj.cyclomatic_complexity)
@@ -400,12 +402,13 @@ class MergedProjectProfile:
         """
         all_strs = []
         for f in self.all_functions.values():
+            # print(f.function_source_file)
             if f.function_source_file == "":
                 continue
             if "/usr/include/" in f.function_source_file:
                 continue
+            # print(f.function_source_file)
             all_strs.append(os.path.dirname(f.function_source_file))
-
         self.basefolder = utils.longest_common_prefix(all_strs) + "/"
 
     def _get_total_unreached_function_count(self) -> int:

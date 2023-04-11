@@ -1,29 +1,19 @@
 digraph "Call graph: fuzzer.ll" {
 	label="Call graph: fuzzer.ll";
 
-	Node0x56255a59d410 [shape=record,label="{__cxx_global_var_init}"];
-	Node0x56255a59d410 -> Node0x56255a59d500;
-	Node0x56255a59d410 -> Node0x56255a59d9c0;
-	Node0x56255a59dad0 [shape=record,label="{_ZNSt8ios_base4InitD1Ev}"];
-	Node0x56255a59d9c0 [shape=record,label="{__cxa_atexit}"];
-	Node0x56255a59dc90 [shape=record,label="{_Z9functionAii}"];
-	Node0x56255a59dc90 -> Node0x56255a59dd10;
-	Node0x56255a59dc90 -> Node0x56255a59ddc0;
-	Node0x56255a59dc90 -> Node0x56255a59de40;
-	Node0x56255a59dc90 -> Node0x56255a59df70;
-	Node0x56255a59d500 [shape=record,label="{_ZNSt8ios_base4InitC1Ev}"];
-	Node0x56255a59ddc0 [shape=record,label="{_ZNSolsEi}"];
-	Node0x56255a59de40 [shape=record,label="{_ZNSolsEPFRSoS_E}"];
-	Node0x56255a59df70 [shape=record,label="{_Z9functionBi}"];
-	Node0x56255a59df70 -> Node0x56255a59dd10;
-	Node0x56255a59df70 -> Node0x56255a59ddc0;
-	Node0x56255a59df70 -> Node0x56255a59de40;
-	Node0x56255a59df70 -> Node0x56255a59dc90;
-	Node0x56255a59e1a0 [shape=record,label="{_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_}"];
-	Node0x56255a59dd10 [shape=record,label="{_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc}"];
-	Node0x56255a59e510 [shape=record,label="{LLVMFuzzerTestOneInput}"];
-	Node0x56255a59e510 -> Node0x56255a59dc90;
-	Node0x56255a59e610 [shape=record,label="{_GLOBAL__sub_I_fuzzer.cpp}"];
-	Node0x56255a59e610 -> Node0x56255a59d410;
-	Node0x56255a59e590 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+	Node0x55e10a4de2e0 [shape=record,label="{__cxx_global_var_init}"];
+	Node0x55e10a4de2e0 -> Node0x55e10a4de3d0;
+	Node0x55e10a4de2e0 -> Node0x55e10a4de890;
+	Node0x55e10a4de9a0 [shape=record,label="{_ZNSt8ios_base4InitD1Ev}"];
+	Node0x55e10a4de890 [shape=record,label="{__cxa_atexit}"];
+	Node0x55e10a4deb60 [shape=record,label="{_Z9functionAii}"];
+	Node0x55e10a4deb60 -> Node0x55e10a4debe0;
+	Node0x55e10a4de3d0 [shape=record,label="{_ZNSt8ios_base4InitC1Ev}"];
+	Node0x55e10a4debe0 [shape=record,label="{_Z9functionBi}"];
+	Node0x55e10a4debe0 -> Node0x55e10a4deb60;
+	Node0x55e10a4dee10 [shape=record,label="{LLVMFuzzerTestOneInput}"];
+	Node0x55e10a4dee10 -> Node0x55e10a4deb60;
+	Node0x55e10a4def40 [shape=record,label="{_GLOBAL__sub_I_fuzzer.cpp}"];
+	Node0x55e10a4def40 -> Node0x55e10a4de2e0;
+	Node0x55e10a4deec0 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
 }

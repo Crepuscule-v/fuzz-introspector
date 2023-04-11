@@ -9,7 +9,7 @@ void functionA(int count, int b) {
         return;
     }
 
-    std::cout << "This is functionA, count: " << count << std::endl;
+    // std::cout << "This is functionA, count: " << count << std::endl;
 
     functionB(count - 1);
 }
@@ -18,7 +18,7 @@ void functionB(int count) {
     if (count <= 0) {
         return;
     }
-    std::cout << "This is functionB, count: " << count << std::endl;
+    // std::cout << "This is functionB, count: " << count << std::endl;
 
     functionA(count - 1, 0);
 }

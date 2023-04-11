@@ -189,7 +189,7 @@ def scan_executables_for_fuzz_introspector_logs(
             })
             # Break when a string is found to avoid scanning the whole binary.
             break
-    print(executable_to_fuzz_reports)
+    # print(executable_to_fuzz_reports)
     return executable_to_fuzz_reports
 
 

@@ -1,0 +1,1416 @@
+{
+    "nodes": [
+        {
+            "id": "Node0x55fcb0cca410",
+            "function_name": "__cxx_global_var_init",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 13,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaad0",
+            "function_name": "std::ios_base::Init::~Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0cca9c0",
+            "function_name": "__cxa_atexit",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 3,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccac90",
+            "function_name": "functionA(int, int)",
+            "hit_count": 39700,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 36,
+            "edge_count": 7,
+            "function_linenumber": 7,
+            "color": "#6C112D"
+        },
+        {
+            "id": "Node0x55fcb0cca500",
+            "function_name": "std::ios_base::Init::Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccadc0",
+            "function_name": "std::ostream::operator<<(int)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccae40",
+            "function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaf70",
+            "function_name": "functionB(int)",
+            "hit_count": 29300,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 1,
+            "bb_count": 6,
+            "i_count": 33,
+            "edge_count": 7,
+            "function_linenumber": 17,
+            "color": "#7E5F94"
+        },
+        {
+            "id": "Node0x55fcb0ccb1a0",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccad10",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb510",
+            "function_name": "LLVMFuzzerTestOneInput",
+            "hit_count": 18900,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 43,
+            "edge_count": 7,
+            "function_linenumber": 26,
+            "color": "#9276F4"
+        },
+        {
+            "id": "Node0x55fcb0ccb610",
+            "function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 12,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb590",
+            "function_name": "llvm.memcpy.p0i8.p0i8.i64",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        }
+    ],
+    "edges": [
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca500",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ios_base::Init::Init()",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca9c0",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxa_atexit",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccaf70",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionB(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb510",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 16000,
+            "src_function_name": "LLVMFuzzerTestOneInput",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb610",
+            "target": "Node0x55fcb0cca410",
+            "hit_count": 0,
+            "src_function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxx_global_var_init",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "-1",
+            "target": "Node0x55fcb0ccb510",
+            "hit_count": 200,
+            "src_function_name": "-1",
+            "src_function_source_file": "-1",
+            "dst_function_name": "LLVMFuzzerTestOneInput",
+            "dst_functoin_source_file": "fuzzer.cpp"
+        }
+    ]
+}{
+    "nodes": [
+        {
+            "id": "Node0x55fcb0cca410",
+            "function_name": "__cxx_global_var_init",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 13,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaad0",
+            "function_name": "std::ios_base::Init::~Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0cca9c0",
+            "function_name": "__cxa_atexit",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 3,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccac90",
+            "function_name": "functionA(int, int)",
+            "hit_count": 39700,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 36,
+            "edge_count": 7,
+            "function_linenumber": 7,
+            "color": "#1E1370"
+        },
+        {
+            "id": "Node0x55fcb0cca500",
+            "function_name": "std::ios_base::Init::Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccadc0",
+            "function_name": "std::ostream::operator<<(int)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccae40",
+            "function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaf70",
+            "function_name": "functionB(int)",
+            "hit_count": 29300,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 1,
+            "bb_count": 6,
+            "i_count": 33,
+            "edge_count": 7,
+            "function_linenumber": 17,
+            "color": "#11D3A4"
+        },
+        {
+            "id": "Node0x55fcb0ccb1a0",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccad10",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb510",
+            "function_name": "LLVMFuzzerTestOneInput",
+            "hit_count": 18900,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 43,
+            "edge_count": 7,
+            "function_linenumber": 26,
+            "color": "#9A93DB"
+        },
+        {
+            "id": "Node0x55fcb0ccb610",
+            "function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 12,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb590",
+            "function_name": "llvm.memcpy.p0i8.p0i8.i64",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        }
+    ],
+    "edges": [
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca500",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ios_base::Init::Init()",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca9c0",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxa_atexit",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccaf70",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionB(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb510",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 16000,
+            "src_function_name": "LLVMFuzzerTestOneInput",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb610",
+            "target": "Node0x55fcb0cca410",
+            "hit_count": 0,
+            "src_function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxx_global_var_init",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "-1",
+            "target": "Node0x55fcb0ccb510",
+            "hit_count": 200,
+            "src_function_name": "-1",
+            "src_function_source_file": "-1",
+            "dst_function_name": "LLVMFuzzerTestOneInput",
+            "dst_functoin_source_file": "fuzzer.cpp"
+        }
+    ]
+}{
+    "nodes": [
+        {
+            "id": "Node0x55fcb0cca410",
+            "function_name": "__cxx_global_var_init",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 13,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaad0",
+            "function_name": "std::ios_base::Init::~Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0cca9c0",
+            "function_name": "__cxa_atexit",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 3,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccac90",
+            "function_name": "functionA(int, int)",
+            "hit_count": 39700,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 36,
+            "edge_count": 7,
+            "function_linenumber": 7,
+            "color": "#41242E"
+        },
+        {
+            "id": "Node0x55fcb0cca500",
+            "function_name": "std::ios_base::Init::Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccadc0",
+            "function_name": "std::ostream::operator<<(int)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccae40",
+            "function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaf70",
+            "function_name": "functionB(int)",
+            "hit_count": 29300,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 1,
+            "bb_count": 6,
+            "i_count": 33,
+            "edge_count": 7,
+            "function_linenumber": 17,
+            "color": "#3163DC"
+        },
+        {
+            "id": "Node0x55fcb0ccb1a0",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccad10",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb510",
+            "function_name": "LLVMFuzzerTestOneInput",
+            "hit_count": 18900,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 43,
+            "edge_count": 7,
+            "function_linenumber": 26,
+            "color": "#7F007E"
+        },
+        {
+            "id": "Node0x55fcb0ccb610",
+            "function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 12,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb590",
+            "function_name": "llvm.memcpy.p0i8.p0i8.i64",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        }
+    ],
+    "edges": [
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca500",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ios_base::Init::Init()",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca9c0",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxa_atexit",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccaf70",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionB(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb510",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 16000,
+            "src_function_name": "LLVMFuzzerTestOneInput",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb610",
+            "target": "Node0x55fcb0cca410",
+            "hit_count": 0,
+            "src_function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxx_global_var_init",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "-1",
+            "target": "Node0x55fcb0ccb510",
+            "hit_count": 200,
+            "src_function_name": "-1",
+            "src_function_source_file": "-1",
+            "dst_function_name": "LLVMFuzzerTestOneInput",
+            "dst_functoin_source_file": "fuzzer.cpp"
+        }
+    ]
+}{
+    "nodes": [
+        {
+            "id": "Node0x55fcb0cca410",
+            "function_name": "__cxx_global_var_init",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 13,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaad0",
+            "function_name": "std::ios_base::Init::~Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0cca9c0",
+            "function_name": "__cxa_atexit",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 3,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccac90",
+            "function_name": "functionA(int, int)",
+            "hit_count": 39700,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 36,
+            "edge_count": 7,
+            "function_linenumber": 7,
+            "color": "#D2C14C"
+        },
+        {
+            "id": "Node0x55fcb0cca500",
+            "function_name": "std::ios_base::Init::Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccadc0",
+            "function_name": "std::ostream::operator<<(int)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccae40",
+            "function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaf70",
+            "function_name": "functionB(int)",
+            "hit_count": 29300,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 1,
+            "bb_count": 6,
+            "i_count": 33,
+            "edge_count": 7,
+            "function_linenumber": 17,
+            "color": "#2D475F"
+        },
+        {
+            "id": "Node0x55fcb0ccb1a0",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccad10",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb510",
+            "function_name": "LLVMFuzzerTestOneInput",
+            "hit_count": 18900,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 43,
+            "edge_count": 7,
+            "function_linenumber": 26,
+            "color": "#A37E95"
+        },
+        {
+            "id": "Node0x55fcb0ccb610",
+            "function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 12,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb590",
+            "function_name": "llvm.memcpy.p0i8.p0i8.i64",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        }
+    ],
+    "edges": [
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca500",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ios_base::Init::Init()",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca9c0",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxa_atexit",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccaf70",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionB(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb510",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 16000,
+            "src_function_name": "LLVMFuzzerTestOneInput",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb610",
+            "target": "Node0x55fcb0cca410",
+            "hit_count": 0,
+            "src_function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxx_global_var_init",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "-1",
+            "target": "Node0x55fcb0ccb510",
+            "hit_count": 200,
+            "src_function_name": "-1",
+            "src_function_source_file": "-1",
+            "dst_function_name": "LLVMFuzzerTestOneInput",
+            "dst_functoin_source_file": "fuzzer.cpp"
+        }
+    ]
+}{
+    "nodes": [
+        {
+            "id": "Node0x55fcb0cca410",
+            "function_name": "__cxx_global_var_init",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 13,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaad0",
+            "function_name": "std::ios_base::Init::~Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0cca9c0",
+            "function_name": "__cxa_atexit",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 3,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccac90",
+            "function_name": "functionA(int, int)",
+            "hit_count": 39700,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 36,
+            "edge_count": 7,
+            "function_linenumber": 7,
+            "color": "#693162"
+        },
+        {
+            "id": "Node0x55fcb0cca500",
+            "function_name": "std::ios_base::Init::Init()",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 1,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccadc0",
+            "function_name": "std::ostream::operator<<(int)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccae40",
+            "function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": 2,
+            "bb_count": 0,
+            "i_count": 0,
+            "edge_count": 0,
+            "function_linenumber": -1,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccaf70",
+            "function_name": "functionB(int)",
+            "hit_count": 29300,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 1,
+            "bb_count": 6,
+            "i_count": 33,
+            "edge_count": 7,
+            "function_linenumber": 17,
+            "color": "#E3EA0B"
+        },
+        {
+            "id": "Node0x55fcb0ccb1a0",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccad10",
+            "function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb510",
+            "function_name": "LLVMFuzzerTestOneInput",
+            "hit_count": 18900,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 2,
+            "bb_count": 6,
+            "i_count": 43,
+            "edge_count": 7,
+            "function_linenumber": 26,
+            "color": "#BE5BFE"
+        },
+        {
+            "id": "Node0x55fcb0ccb610",
+            "function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "hit_count": 0,
+            "function_source_file": "/home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp",
+            "arg_count": 0,
+            "bb_count": 3,
+            "i_count": 12,
+            "edge_count": 3,
+            "function_linenumber": 0,
+            "color": "#99CCCC"
+        },
+        {
+            "id": "Node0x55fcb0ccb590",
+            "function_name": "llvm.memcpy.p0i8.p0i8.i64",
+            "hit_count": 0,
+            "function_source_file": "",
+            "arg_count": "",
+            "bb_count": "",
+            "i_count": "",
+            "edge_count": "",
+            "function_linenumber": "",
+            "color": "#99CCCC"
+        }
+    ],
+    "edges": [
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca500",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ios_base::Init::Init()",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0cca410",
+            "target": "Node0x55fcb0cca9c0",
+            "hit_count": 0,
+            "src_function_name": "__cxx_global_var_init",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxa_atexit",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccac90",
+            "target": "Node0x55fcb0ccaf70",
+            "hit_count": 29300,
+            "src_function_name": "functionA(int, int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionB(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccad10",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccadc0",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "std::ostream::operator<<(int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccae40",
+            "hit_count": 0,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": "",
+            "dst_function_name": "std::ostream::operator<<(std::ostream& (*)(std::ostream&))",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "Node0x55fcb0ccaf70",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 23700,
+            "src_function_name": "functionB(int)",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb510",
+            "target": "Node0x55fcb0ccac90",
+            "hit_count": 16000,
+            "src_function_name": "LLVMFuzzerTestOneInput",
+            "src_function_source_file": null,
+            "dst_function_name": "functionA(int, int)",
+            "dst_functoin_source_file": "",
+            "dst_function_source_file": "fuzzer.cpp"
+        },
+        {
+            "source": "Node0x55fcb0ccb610",
+            "target": "Node0x55fcb0cca410",
+            "hit_count": 0,
+            "src_function_name": "_GLOBAL__sub_I_fuzzer.cpp",
+            "src_function_source_file": "",
+            "dst_function_name": "__cxx_global_var_init",
+            "dst_functoin_source_file": ""
+        },
+        {
+            "source": "-1",
+            "target": "Node0x55fcb0ccb510",
+            "hit_count": 200,
+            "src_function_name": "-1",
+            "src_function_source_file": "-1",
+            "dst_function_name": "LLVMFuzzerTestOneInput",
+            "dst_functoin_source_file": "fuzzer.cpp"
+        }
+    ]
+}

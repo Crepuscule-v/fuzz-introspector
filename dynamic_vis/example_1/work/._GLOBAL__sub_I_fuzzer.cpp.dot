@@ -1,5 +1,5 @@
 digraph "CFG for '_GLOBAL__sub_I_fuzzer.cpp' function" {
 	label="CFG for '_GLOBAL__sub_I_fuzzer.cpp' function";
 
-	Node0x56285318b1c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  call void @__cxx_global_var_init()\l  ret void\l}"];
+	Node0x5598eee14610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  call void @__cxx_global_var_init()\l  ret void\l}"];
 }

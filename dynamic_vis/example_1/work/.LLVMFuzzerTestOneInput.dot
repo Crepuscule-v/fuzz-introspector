@@ -1,12 +1,12 @@
 digraph "CFG for 'LLVMFuzzerTestOneInput' function" {
 	label="CFG for 'LLVMFuzzerTestOneInput' function";
 
-	Node0x5628531884e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %retval = alloca i32, align 4\l  %data.addr = alloca i8*, align 8\l  %size.addr = alloca i64, align 8\l  %initialCount = alloca i32, align 4\l  store i8* %data, i8** %data.addr, align 8\l  store i64 %size, i64* %size.addr, align 8\l  %0 = load i64, i64* %size.addr, align 8\l  %cmp = icmp ult i64 %0, 4\l  br i1 %cmp, label %if.then, label %if.end\l|{<s0>T|<s1>F}}"];
-	Node0x5628531884e0:s0 -> Node0x5628531891f0;
-	Node0x5628531884e0:s1 -> Node0x562853189260;
-	Node0x5628531891f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{if.then:                                          \l  store i32 0, i32* %retval, align 4\l  br label %return\l}"];
-	Node0x5628531891f0 -> Node0x562853189470;
-	Node0x562853189260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{if.end:                                           \l  %1 = bitcast i32* %initialCount to i8*\l  %2 = load i8*, i8** %data.addr, align 8\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 4 %1, i8* align 1 %2, i64 4,\l... i1 false)\l  %3 = load i32, i32* %initialCount, align 4\l  %rem = srem i32 %3, 10\l  store i32 %rem, i32* %initialCount, align 4\l  %4 = load i32, i32* %initialCount, align 4\l  call void @_Z9functionAii(i32 noundef %4, i32 noundef 0)\l  store i32 0, i32* %retval, align 4\l  br label %return\l}"];
-	Node0x562853189260 -> Node0x562853189470;
-	Node0x562853189470 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{return:                                           \l  %5 = load i32, i32* %retval, align 4\l  ret i32 %5\l}"];
+	Node0x5598eee130d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %retval = alloca i32, align 4\l  %data.addr = alloca i8*, align 8\l  %size.addr = alloca i64, align 8\l  %initialCount = alloca i32, align 4\l  store i8* %data, i8** %data.addr, align 8\l  store i64 %size, i64* %size.addr, align 8\l  %0 = load i64, i64* %size.addr, align 8\l  %cmp = icmp ult i64 %0, 4\l  br i1 %cmp, label %if.then, label %if.end\l|{<s0>T|<s1>F}}"];
+	Node0x5598eee130d0:s0 -> Node0x5598eee135d0;
+	Node0x5598eee130d0:s1 -> Node0x5598eee13640;
+	Node0x5598eee135d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{if.then:                                          \l  store i32 0, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x5598eee135d0 -> Node0x5598eee13850;
+	Node0x5598eee13640 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{if.end:                                           \l  %1 = bitcast i32* %initialCount to i8*\l  %2 = load i8*, i8** %data.addr, align 8\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 4 %1, i8* align 1 %2, i64 4,\l... i1 false)\l  %3 = load i32, i32* %initialCount, align 4\l  %rem = srem i32 %3, 10\l  store i32 %rem, i32* %initialCount, align 4\l  %4 = load i32, i32* %initialCount, align 4\l  call void @_Z9functionAii(i32 noundef %4, i32 noundef 0)\l  store i32 0, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x5598eee13640 -> Node0x5598eee13850;
+	Node0x5598eee13850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{return:                                           \l  %5 = load i32, i32* %retval, align 4\l  ret i32 %5\l}"];
 }

@@ -12,3 +12,4 @@ python3 ${ROOT}/../../src/main.py correlate --binaries_dir=./work/
 cd work
 ../../../build/llvm-build/bin/clang++  -fprofile-instr-generate -fcoverage-mapping -fsanitize=fuzzer -mllvm -runtime-counter-relocation ../fuzzer.c -o fuzzer
 LLVM_PROFILE_FILE="fuzzer%c.profraw"  ./fuzzer
+

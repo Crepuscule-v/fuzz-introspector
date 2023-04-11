@@ -1,0 +1,6 @@
+Call tree
+LLVMFuzzerTestOneInput /home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp linenumber=-1
+  _Z9functionAii /home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp linenumber=37
+    _Z9functionBi /home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp linenumber=14
+      _Z9functionAii /home/fuzz/Desktop/fuzz-introspector/dynamic_vis/example_1/work/../fuzzer.cpp linenumber=23
+====================================

@@ -50,6 +50,7 @@ def read_fuzzer_data_file_to_profile(
         return None
 
     profile = fuzzer_profile.FuzzerProfile(cfg_file, data_dict_yaml, language)
+
     if not profile.has_entry_point():
         logger.info("Found no entrypoints")
         return None

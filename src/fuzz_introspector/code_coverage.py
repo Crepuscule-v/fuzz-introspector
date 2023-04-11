@@ -124,7 +124,7 @@ class CoverageProfile:
             if lineno + 11 in self.file_map[target_key]:
                 logger.debug("Success with line number adjustment")
                 return True
-
+            
         return False
 
     def is_func_hit(self, funcname: str) -> bool:

@@ -48,21 +48,24 @@ class IntrospectionProject():
         self.profiles = data_loader.load_all_profiles(self.base_folder,
                                                       self.language,
                                                       parallelise)
+        
         logger.info(f"Found {len(self.profiles)} profiles")
+        
         # 到目前为止, profile 对应的 coverage 数据仍然为空
         if len(self.profiles) == 0:
             logger.info("Found no profiles")
             raise DataLoaderError("No fuzzer profiles")
-
+        
         self.input_bugs = data_loader.try_load_input_bugs()
         correlation_dict = utils.data_file_read_yaml(correlation_file)
+
         if correlation_dict is not None and "pairings" in correlation_dict:
             for profile in self.profiles:
                 profile.correlate_executable_name(correlation_dict)
         logger.info("[+] Accummulating profiles")
         for profile in self.profiles:
             profile.accummulate_profile(self.base_folder)           # 获取覆盖信息
-
+        
         logger.info("[+] Creating project profile")
         self.proj_profile = project_profile.MergedProjectProfile(self.profiles)
         self.proj_profile.coverage_url = self.coverage_url          # /covreport/linux
@@ -311,7 +314,7 @@ def overlay_calltree_with_coverage(
     ct_idx = 0
     if profile.fuzzer_callsite_calltree is None:
         return
-
+    
     target_name = profile.identifier
     target_coverage_url = utils.get_target_coverage_url(
         coverage_url, target_name, profile.target_lang)
@@ -348,10 +351,10 @@ def overlay_calltree_with_coverage(
                                               target_coverage_url)
         node.cov_callsite_link = get_parent_callsite_link(
             node, callstack, profile, target_coverage_url)
-        print(node.dst_function_name)
-        print(node.cov_link)
-        print(node.cov_callsite_link)
-        print()
+        # print(node.dst_function_name)
+        # print(node.cov_link)
+        # print(node.cov_callsite_link)
+        # print()
     
     # For python, do a hack where we check if any node is covered, and, if so,
     # ensure the entrypoint is covered.
@@ -379,7 +382,7 @@ def overlay_calltree_with_coverage(
             n1.cov_forward_reds = 0
             n1.cov_largest_blocked_func = "none"
             continue
-
+        
         # Read forward untill we see a green node.
         idx2 = idx1 + 1
         forward_red = 0
@@ -446,7 +449,7 @@ def overlay_calltree_with_coverage(
     json_report.add_fuzzer_key_value_to_report(profile.identifier,
                                                'branch_blockers',
                                                branch_blockers_list)
-    print("########")
+
 
 
 def update_branch_complexities(
